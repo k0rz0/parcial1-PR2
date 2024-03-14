@@ -26,10 +26,22 @@ public class TransportadoraController {
     private URL location;
 
     @FXML
+    private Button btAgregarVehiculoTransporte;
+
+    @FXML
     private Button btnAgregarPropietario;
 
     @FXML
+    private Button btnAgregarUsuario;
+
+    @FXML
+    private Button btnAgregarVehiculoCarga;
+
+    @FXML
     private Button btnUsuariosMayoresEdad;
+
+    @FXML
+    private TextField txtCapacidadCarga;
 
     @FXML
     private TextField txtCedulaPropietario;
@@ -38,27 +50,104 @@ public class TransportadoraController {
     private TextField txtCelularPropietario;
 
     @FXML
+    private TextField txtColorCarga;
+
+    @FXML
+    private TextField txtColorTransporte;
+
+    @FXML
+    private TextField txtEdadUsuario;
+
+    @FXML
     private TextField txtEmailPropietario;
+
+    @FXML
+    private TextField txtMarcaCarga;
+
+    @FXML
+    private TextField txtMarcaTransporte;
+
+    @FXML
+    private TextField txtModeloCarga;
+
+    @FXML
+    private TextField txtModeloTransporte;
 
     @FXML
     private TextField txtNombrePropietario;
 
     @FXML
-    private TextArea txtResultadoBusquedas;
+    private TextField txtNumEjesCarga;
 
     @FXML
-    void onAgregarPropietario(ActionEvent event) {
+    private TextField txtNumMaxPasajerosTransporte;
 
-    }
+    @FXML
+    private TextField txtPlacaCarga;
 
+    @FXML
+    private TextField txtPlacaTransporte;
+
+    @FXML
+    private TextArea txtResultadoBusquedas;
     @FXML
     void onCantidadUsuariosMayoresEdad(ActionEvent event) {
         obtenerMayoresdeEdad();
     }
+    @FXML
+    void onAgregarPropietario(ActionEvent event) {
+        crearPropietario();
+    }
+    @FXML
+    void onAgregarVehiculoCarga(ActionEvent event) {crearVehiculoCarga();}
+    @FXML
+    void onAgregarVehiculoTransporte(ActionEvent event) {crearVehiculoTransporte();}
+    @FXML
+    void onAgregarUsuario(ActionEvent event) {crearUsuario();}
 
+    private void crearPropietario() {
+        modelFactory.crearPropietario(
+                txtNombrePropietario.getText()
+                ,txtEmailPropietario.getText()
+                ,txtCedulaPropietario.getText()
+                ,txtCelularPropietario.getText());
+
+        /*txtResultadoBusquedas.setText(propietarios);*/
+    }
     private void obtenerMayoresdeEdad() {
         String resultado = modelFactory.obtenerUsuariosMayoresDeEdad();
         txtResultadoBusquedas.setText(resultado);
+    }
+    private void crearVehiculoCarga() {
+
+        /*if(!txtNumEjesCarga.getText().isEmpty())*/
+
+        modelFactory.crearVehiculoCarga(
+                txtPlacaCarga.getText(),
+                txtModeloCarga.getText(),
+                txtMarcaCarga.getText(),
+                txtColorCarga.getText(),
+                txtCapacidadCarga.getText(),
+                txtNumEjesCarga.getText());
+
+        /*txtResultadoBusquedas.setText(vehiculos);*/
+    }
+
+    private void crearVehiculoTransporte() {
+        modelFactory.crearVehiculoTransporte(
+                txtPlacaTransporte.getText(),
+                txtModeloTransporte.getText(),
+                txtMarcaTransporte.getText(),
+                txtColorTransporte.getText(),
+                txtNumMaxPasajerosTransporte.getText()
+        );
+
+    }
+
+    private void crearUsuario() {
+        modelFactory.crearUsuario(
+                txtEdadUsuario.getText()
+        );
     }
 
 

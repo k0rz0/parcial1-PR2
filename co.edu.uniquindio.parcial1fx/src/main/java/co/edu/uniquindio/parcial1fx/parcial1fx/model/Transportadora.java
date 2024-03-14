@@ -62,4 +62,25 @@ public class Transportadora {
 
         return usuarios;
     }
+
+    public String obtenerPropietarios() {
+        String propietarios = "";
+
+        for (Propietario propietario: getListaPropietarios()) {
+            propietarios += propietario.toString() + "\n";
+        }
+
+        return propietarios;
+
+    }
+
+    public String obtenerVehiculosCarga() {
+        String vehiculosCarga = "";
+
+        for (VehiculoCarga vehiculoCarga: getListaVehiculosCarga()) {
+            vehiculosCarga += vehiculoCarga.toString() + "\n";
+        }
+
+        return vehiculosCarga;
+    }
 }

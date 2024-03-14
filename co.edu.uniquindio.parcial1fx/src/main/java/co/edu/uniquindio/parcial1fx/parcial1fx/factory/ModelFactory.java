@@ -109,23 +109,26 @@ public class ModelFactory {
 
         Usuario usuario1 = Usuario.builder()
                 .edad(40)
+                .vehiculoTransporte(vehiculoTransporte1)
                 .build();
 
         Usuario usuario2 = Usuario.builder()
                 .edad(12)
+                .vehiculoTransporte(vehiculoTransporte1)
                 .build();
 
         Usuario usuario3 = Usuario.builder()
                 .edad(18)
+                .vehiculoTransporte(vehiculoTransporte2)
                 .build();
 
         transportadora.getListaUsuarios().add(usuario1);
         transportadora.getListaUsuarios().add(usuario2);
         transportadora.getListaUsuarios().add(usuario3);
 
-        vehiculoTransporte2.getListaUsuariosAsociados().add(usuario3);
         vehiculoTransporte1.getListaUsuariosAsociados().add(usuario1);
         vehiculoTransporte1.getListaUsuariosAsociados().add(usuario2);
+        vehiculoTransporte2.getListaUsuariosAsociados().add(usuario3);
 
     }
     public String obtenerUsuariosMayoresDeEdad() {
@@ -133,5 +136,55 @@ public class ModelFactory {
     }
 
 
+    public void crearPropietario(String nombre, String email, String cedula, String celular) {
+        Propietario propietario = Propietario.builder()
+                .nombre(nombre)
+                .email(email)
+                .celular(celular)
+                .cedula(cedula)
+                .build();
 
+        transportadora.getListaPropietarios().add(propietario);
+
+        /* return transportadora.obtenerPropietarios();*/
+
+    }
+
+    public void crearVehiculoCarga(String placa, String modelo, String marca, String color, String capacidad, String numEjes) {
+        VehiculoCarga vehiculoCarga = VehiculoCarga.builder()
+                .placa(placa)
+                .modelo(modelo)
+                .marca(marca)
+                .color(color)
+                .capacidadCarga(Double.parseDouble(capacidad))
+                .numEjes(Integer.parseInt(numEjes))
+                .build();
+
+       transportadora.getListaVehiculosCarga().add(vehiculoCarga);
+
+        /* return transportadora.obtenerVehiculosCarga();*/
+    }
+
+    public void crearVehiculoTransporte(String placa, String modelo, String marca, String color, String numPasajeros) {
+        VehiculoTransporte vehiculoTransporte = VehiculoTransporte.builder()
+                .placa(placa)
+                .modelo(modelo)
+                .marca(marca)
+                .color(color)
+                .MaxPasajeros(Integer.parseInt(numPasajeros))
+                .build();
+
+        transportadora.getListaVehiculosTransporte().add(vehiculoTransporte);
+
+    }
+
+    public void crearUsuario(String edad) {
+
+        Usuario usuario = Usuario.builder()
+                .edad(Integer.parseInt(edad))
+                .build();
+
+        transportadora.getListaUsuarios().add(usuario);
+
+    }
 }

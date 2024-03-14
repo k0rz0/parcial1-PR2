@@ -28,24 +28,66 @@
                           <Button fx:id="btnAgregarPropietario" layoutX="214.0" layoutY="313.0" mnemonicParsing="false" onAction="#onAgregarPropietario" text="Agregar Propietario" />
                           <Separator layoutX="3.0" layoutY="45.0" prefHeight="0.0" prefWidth="536.0" />
                           <Separator layoutX="3.0" layoutY="285.0" prefHeight="0.0" prefWidth="542.0" />
-                          <Label layoutX="197.0" layoutY="14.0" text="CREACIÓN DE PROPIETARIO" />
+                          <Label layoutX="238.0" layoutY="14.0" text="PROPIETARIO" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Vehiculo carga" >
+          <Tab text="Vehiculo carga">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="160.0" layoutY="69.0" text="Placa:" />
+                        <Label layoutX="146.0" layoutY="99.0" text="Modelo:" />
+                        <Label layoutX="156.0" layoutY="129.0" text="Marca:" />
+                        <Label layoutX="159.0" layoutY="158.0" text="Color:" />
+                        <TextField fx:id="txtPlacaCarga" layoutX="235.0" layoutY="65.0" />
+                        <TextField fx:id="txtModeloCarga" layoutX="235.0" layoutY="95.0" />
+                        <TextField fx:id="txtMarcaCarga" layoutX="236.0" layoutY="125.0" />
+                        <TextField fx:id="txtColorCarga" layoutX="236.0" layoutY="154.0" />
+                        <Button fx:id="btnAgregarVehiculoCarga" layoutX="194.0" layoutY="316.0" mnemonicParsing="false" onAction="#onAgregarVehiculoCarga" text="Agregar vehiculo de carga" />
+                        <Separator layoutY="49.0" prefHeight="0.0" prefWidth="536.0" />
+                        <Separator layoutY="289.0" prefHeight="0.0" prefWidth="542.0" />
+                        <Label layoutX="212.0" layoutY="14.0" text=" VEHICULO DE CARGA" />
+                        <TextField fx:id="txtCapacidadCarga" layoutX="235.0" layoutY="183.0" />
+                        <TextField fx:id="txtNumEjesCarga" layoutX="235.0" layoutY="212.0" />
+                        <Label layoutX="84.0" layoutY="187.0" text="Capacidad de carga:" />
+                        <Label layoutX="106.0" layoutY="216.0" text="Número de ejes:" />
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Vehiculo transporte">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="160.0" layoutY="69.0" text="Placa:" />
+                        <Label layoutX="146.0" layoutY="99.0" text="Modelo:" />
+                        <Label layoutX="156.0" layoutY="129.0" text="Marca:" />
+                        <Label layoutX="159.0" layoutY="158.0" text="Color:" />
+                        <TextField fx:id="txtPlacaTransporte" layoutX="235.0" layoutY="65.0" />
+                        <TextField fx:id="txtModeloTransporte" layoutX="235.0" layoutY="95.0" />
+                        <TextField fx:id="txtMarcaTransporte" layoutX="236.0" layoutY="125.0" />
+                        <TextField fx:id="txtColorTransporte" layoutX="236.0" layoutY="154.0" />
+                        <Button fx:id="btAgregarVehiculoTransporte" layoutX="198.0" layoutY="315.0" mnemonicParsing="false" onAction="#onAgregarVehiculoTransporte" text="Agregar vehiculo de transporte" />
+                        <Separator layoutY="49.0" prefHeight="0.0" prefWidth="536.0" />
+                        <Separator layoutY="289.0" prefHeight="0.0" prefWidth="542.0" />
+                        <Label layoutX="212.0" layoutY="14.0" text=" VEHICULO DE TRANSPORTE" />
+                        <TextField fx:id="txtNumMaxPasajerosTransporte" layoutX="235.0" layoutY="183.0" />
+                        <Label layoutX="31.0" layoutY="187.0" text="Número maximo de pasajeros:" />
+                     </children></AnchorPane>
               </content>
             </Tab>
             <Tab text="usuario">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="160.0" layoutY="69.0" text="Edad:" />
+                        <TextField fx:id="txtEdadUsuario" layoutX="235.0" layoutY="65.0" />
+                        <Button fx:id="btnAgregarUsuario" layoutX="238.0" layoutY="313.0" mnemonicParsing="false" onAction="#onAgregarUsuario" text="Agregar usuario" />
+                        <Separator layoutY="49.0" prefHeight="0.0" prefWidth="536.0" />
+                        <Separator layoutY="289.0" prefHeight="0.0" prefWidth="542.0" />
+                        <Label layoutX="263.0" layoutY="14.0" text="USUARIO" />
+                     </children></AnchorPane>
               </content>
             </Tab>
             <Tab text="Busquedas">
